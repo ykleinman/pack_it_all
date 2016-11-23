@@ -24,7 +24,7 @@
           Checklist
         </label>
 
-        <input type="text" id="checklist_id" name="checklist_id" placeholder="Checklist" class="form-control" value="<%= @item.checklist_id %>">
+        <%= select_tag(:checklist_id, options_from_collection_for_select(Checklist.all, :id, :created_at, @item.checklist_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for item_name -->
