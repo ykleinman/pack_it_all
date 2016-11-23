@@ -18,7 +18,7 @@
       <% @trips.each do |trip| %>
       <tr>
         <td><%= trip.location %></td>
-        <td><%= trip.user_id %></td>
+        <td><%= trip.user.username %></td>
         <td><%= trip.dates %></td>
         <td>
           <a href="/trips/<%= trip.id %>" class="btn btn-primary">Show</a>
