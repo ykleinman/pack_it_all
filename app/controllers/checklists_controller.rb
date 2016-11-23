@@ -1,6 +1,6 @@
 class ChecklistsController < ApplicationController
   def index
-    @checklists = Checklist.all
+    @checklists = Checklist.page(params[:page]).per(10)
 
     render("checklists/index.html.erb")
   end
