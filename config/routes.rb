@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Checklist resource:
+  # CREATE
+  get "/checklists/new", :controller => "checklists", :action => "new"
+  post "/create_checklist", :controller => "checklists", :action => "create"
+
+  # READ
+  get "/checklists", :controller => "checklists", :action => "index"
+  get "/checklists/:id", :controller => "checklists", :action => "show"
+
+  # UPDATE
+  get "/checklists/:id/edit", :controller => "checklists", :action => "edit"
+  post "/update_checklist/:id", :controller => "checklists", :action => "update"
+
+  # DELETE
+  get "/delete_checklist/:id", :controller => "checklists", :action => "destroy"
+  #------------------------------
+
   # Routes for the Trip resource:
   # CREATE
   get "/trips/new", :controller => "trips", :action => "new"
