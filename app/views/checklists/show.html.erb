@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Trip</dt>
-      <dd><%= @checklist.trip_id %></dd>
+      <dd>
+        <% if @checklist.trip.present? %>
+          <a href="/trips/<%= @checklist.trip_id %>">
+            <%= @checklist.trip.location %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Name</dt>
       <dd><%= @checklist.name %></dd>

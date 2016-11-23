@@ -9,7 +9,13 @@
       <dd><%= @trip.location %></dd>
 
       <dt>User</dt>
-      <dd><%= @trip.user_id %></dd>
+      <dd>
+        <% if @trip.user.present? %>
+          <a href="/users/<%= @trip.user_id %>">
+            <%= @trip.user.username %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Dates</dt>
       <dd><%= @trip.dates %></dd>

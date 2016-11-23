@@ -16,7 +16,13 @@
 
       <% @items.each do |item| %>
       <tr>
-        <td><%= item.checklist.created_at %></td>
+        <td>
+          <% if item.checklist.present? %>
+            <a href="/checklists/<%= item.checklist.id %>">
+              <%= item.checklist.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= item.item_name %></td>
         <td>
           <a href="/items/<%= item.id %>" class="btn btn-primary">Show</a>

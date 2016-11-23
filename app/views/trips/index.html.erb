@@ -18,7 +18,13 @@
       <% @trips.each do |trip| %>
       <tr>
         <td><%= trip.location %></td>
-        <td><%= trip.user.username %></td>
+        <td>
+          <% if trip.user.present? %>
+            <a href="/users/<%= trip.user.id %>">
+              <%= trip.user.username %>
+            </a>
+          <% end %>
+        </td>
         <td><%= trip.dates %></td>
         <td>
           <a href="/trips/<%= trip.id %>" class="btn btn-primary">Show</a>
