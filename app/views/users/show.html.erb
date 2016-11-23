@@ -54,6 +54,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_trip" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for location -->
+      <div class="form-group">
+        <label for="location" class="control-label">
+          Location
+        </label>
+
+        <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= @user.id %>">
+
+      <!-- Label and input for dates -->
+      <div class="form-group">
+        <label for="dates" class="control-label">
+          Dates
+        </label>
+
+        <input type="text" id="dates" name="dates" placeholder="Dates" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Trip
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

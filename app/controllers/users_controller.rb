@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @trip = Trip.new
     @user = User.find(params[:id])
 
     render("users/show.html.erb")

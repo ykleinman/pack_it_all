@@ -6,6 +6,7 @@ class ChecklistsController < ApplicationController
   end
 
   def show
+    @item = Item.new
     @checklist = Checklist.find(params[:id])
 
     render("checklists/show.html.erb")
