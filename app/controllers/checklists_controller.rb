@@ -1,6 +1,7 @@
 class ChecklistsController < ApplicationController
   def index
-    @checklists = Checklist.page(params[:page]).per(10)
+    @q = Checklist.ransack(params[:q])
+    @checklists = @q.result(:distinct => true).includes(:trip, :items).page(params[:page]).per(10)
 
     render("checklists/index.html.erb")
   end
