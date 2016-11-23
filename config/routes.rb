@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "users#index"
   # Routes for the Item resource:
   # CREATE
   get "/items/new", :controller => "items", :action => "new"
