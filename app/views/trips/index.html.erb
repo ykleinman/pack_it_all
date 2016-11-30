@@ -99,11 +99,11 @@
     </div>
 
 <div class="form-group">
-          <%= f.label :created_at, "Checklist Created at" %>
+          <%= f.label :created_at, "Item Created at" %>
           <div class="row">
             <div class='col-md-6 mb-1'>
-              <div class='input-group date' id='checklistgteqcreated_atPicker'>
-                  <%= f.text_field :checklist_created_at_gteq, :class => "form-control", :placeholder => "Checklist Created at greater than or equal to" %>
+              <div class='input-group date' id='itemsgteqcreated_atPicker'>
+                  <%= f.text_field :items_created_at_gteq, :class => "form-control", :placeholder => "Item Created at greater than or equal to" %>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -111,8 +111,8 @@
             </div>
 
             <div class='col-md-6'>
-              <div class='input-group date' id='checklistlteqcreated_atPicker'>
-                  <%= f.text_field :checklist_created_at_lteq, :class => "form-control", :placeholder => "Checklist Created at less than or equal to" %>
+              <div class='input-group date' id='itemslteqcreated_atPicker'>
+                  <%= f.text_field :items_created_at_lteq, :class => "form-control", :placeholder => "Item Created at less than or equal to" %>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -122,18 +122,18 @@
       </div>
       <script type="text/javascript">
           $(function () {
-              $('#checklistgteqcreated_atPicker').datetimepicker({
+              $('#itemsgteqcreated_atPicker').datetimepicker({
                   format: 'YYYY-MM-DD hh:mm:SS'
               });
-              $('#checklistlteqcreated_atPicker').datetimepicker({
+              $('#itemslteqcreated_atPicker').datetimepicker({
                   useCurrent: false,
                   format: 'YYYY-MM-DD hh:mm:SS'
               });
-              $('#checklistgteqcreated_atPicker').on("dp.change", function (e) {
-                  $('#checklistlteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+              $('#itemsgteqcreated_atPicker').on("dp.change", function (e) {
+                  $('#itemslteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
               });
-              $('#checklistlteqcreated_atPicker').on("dp.change", function (e) {
-                  $('#checklistgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+              $('#itemslteqcreated_atPicker').on("dp.change", function (e) {
+                  $('#itemsgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
               });
           });
       </script>

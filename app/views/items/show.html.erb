@@ -5,17 +5,17 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Checklist</dt>
+      <dt>Item name</dt>
+      <dd><%= @item.item_name %></dd>
+
+      <dt>Trip</dt>
       <dd>
-        <% if @item.checklist.present? %>
-          <a href="/checklists/<%= @item.checklist_id %>">
-            <%= @item.checklist.created_at %>
+        <% if @item.trip.present? %>
+          <a href="/trips/<%= @item.trip_id %>">
+            <%= @item.trip.location %>
           </a>
         <% end %>
       </dd>
-
-      <dt>Item name</dt>
-      <dd><%= @item.item_name %></dd>
 
     </dl>
 

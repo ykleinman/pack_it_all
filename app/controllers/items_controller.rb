@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def index
     @q = Item.ransack(params[:q])
-    @items = @q.result(:distinct => true).includes(:checklist).page(params[:page]).per(10)
+    @items = @q.result(:distinct => true).includes(:trip).page(params[:page]).per(10)
 
     render("items/index.html.erb")
   end
@@ -21,8 +21,8 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new
 
-    @item.checklist_id = params[:checklist_id]
     @item.item_name = params[:item_name]
+    @item.trip_id = params[:trip_id]
 
     save_status = @item.save
 
@@ -49,8 +49,8 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
 
-    @item.checklist_id = params[:checklist_id]
     @item.item_name = params[:item_name]
+    @item.trip_id = params[:trip_id]
 
     save_status = @item.save
 

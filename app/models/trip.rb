@@ -1,8 +1,8 @@
 class Trip < ApplicationRecord
   # Direct associations
 
-  has_one    :checklist,
-             :dependent => :destroy
+  has_many   :items,
+             :dependent => :nullify
 
   belongs_to :user
 
