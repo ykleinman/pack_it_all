@@ -1,12 +1,13 @@
 class TripsController < ApplicationController
   def index
     @q = Trip.ransack(params[:q])
-    @trips = @q.result(:distinct => true).includes(:user, :checklist).page(params[:page]).per(10)
+    @trips = @q.result(:distinct => true).includes(:user, :items).page(params[:page]).per(10)
 
     render("trips/index.html.erb")
   end
 
   def show
+    @item = Item.new
     @trip = Trip.find(params[:id])
 
     render("trips/show.html.erb")

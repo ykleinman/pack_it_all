@@ -18,15 +18,6 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for checklist_id -->
-      <div class="form-group">
-        <label for="checklist_id" class="control-label">
-          Checklist
-        </label>
-
-        <%= select_tag(:checklist_id, options_from_collection_for_select(Checklist.all, :id, :created_at, @item.checklist_id), :class => "form-control") %>
-      </div>
-
       <!-- Label and input for item_name -->
       <div class="form-group">
         <label for="item_name" class="control-label">
@@ -34,6 +25,15 @@
         </label>
 
         <input type="text" id="item_name" name="item_name" placeholder="Item name" class="form-control" value="<%= @item.item_name %>">
+      </div>
+
+      <!-- Label and input for trip_id -->
+      <div class="form-group">
+        <label for="trip_id" class="control-label">
+          Trip
+        </label>
+
+        <%= select_tag(:trip_id, options_from_collection_for_select(Trip.all, :id, :location, @item.trip_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">

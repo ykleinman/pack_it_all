@@ -1,8 +1,8 @@
 class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
-      t.integer :checklist_id
       t.string :item_name
+      t.integer :trip_id
 
       t.timestamps
 
