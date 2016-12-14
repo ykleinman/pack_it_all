@@ -5,9 +5,6 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Item name</dt>
-      <dd><%= @item.item_name %></dd>
-
       <dt>Trip</dt>
       <dd>
         <% if @item.trip.present? %>
@@ -16,6 +13,9 @@
           </a>
         <% end %>
       </dd>
+
+      <dt>Name</dt>
+      <dd><%= @item.name %></dd>
 
     </dl>
 

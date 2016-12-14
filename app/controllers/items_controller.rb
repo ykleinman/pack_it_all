@@ -21,8 +21,8 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new
 
-    @item.item_name = params[:item_name]
     @item.trip_id = params[:trip_id]
+    @item.name = params[:name]
 
     save_status = @item.save
 
@@ -49,8 +49,8 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
 
-    @item.item_name = params[:item_name]
     @item.trip_id = params[:trip_id]
+    @item.name = params[:name]
 
     save_status = @item.save
 

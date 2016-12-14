@@ -50,7 +50,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'starter_generators', :git => 'https://github.com/raghubetina/starter_generators.git',  :branch => 'firstdraft'
 gem 'font-awesome-sass', '~> 4.5.0'
-gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'activeadmin', :git => 'git://github.com/activeadmin/activeadmin.git', :ref => 'a932d56b156eaf64beb86cb45f8f801b7933c42e'
 gem 'inherited_resources', :git => 'https://github.com/activeadmin/inherited_resources.git'
 gem "rollbar"
 gem "kaminari"
@@ -59,4 +59,4 @@ gem 'seed_dump', :git => 'https://github.com/firstdraft/seed_dump.git'
 gem 'activerecord-import'
 gem "ransack"
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'

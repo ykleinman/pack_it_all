@@ -1,8 +1,7 @@
 class Item < ApplicationRecord
   # Direct associations
 
-  belongs_to :trip,
-             :counter_cache => true
+  belongs_to :trip
 
   # Indirect associations
 
